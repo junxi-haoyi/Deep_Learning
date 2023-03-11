@@ -53,6 +53,9 @@ def predict(network,x):
 
 
 
+#损失函数中的均方误差，检测数据的有效性，数据的损失程度
+def mean_squared_error(y, t):
+    return 0.5 * np.sum((y-t)**2)
 
 
 
