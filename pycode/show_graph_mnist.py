@@ -1,4 +1,6 @@
 #coding=UTF-8
+import os,sys
+sys.path.append(".")
 import pickle
 from PIL import Image
 import numpy as np

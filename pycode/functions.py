@@ -1,18 +1,22 @@
+#coding=UTF-8
 #深度学习函数库
+import sys,os
+#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(".")
 import numpy as np
 from ch01.mnist import load_mnist
 import pkl
 import pickle
 
-#sigmoid 函数，也称激活函数
+#sigmoid 激活函数，将数值固定在0到1之间
 def sigmoid(x):
     return 1 / (1+np.exp(-x))
 
-#ReLU函数 也是一种激活函数
+#ReLU也是一种激活函数
 def relu(x):
     return np.maximum(0,x)
 
-#softmax函数，将数据进行分类
+#softmax分类函数，也就是百分比，鉴别那个结果可能性最大
 def softmax(a):
     c = np.max(a)
     exp_a=np.exp(a-c)
@@ -20,19 +24,19 @@ def softmax(a):
     y=exp_a/sum_exp_a
     return y
 
-#从mnist脚本中获取数据集
+#锟斤拷mnist锟脚憋拷锟叫伙拷取锟斤拷锟捷硷拷
 def get_data():
     (x_train,t_train),(x_test,t_test) = load_mnist(normalize=True,flatten=True,one_hot_label=False)
     return x_test, t_test
 
-#从pkl文件读取已经训练好的权重，并且返还字典
+#锟斤拷pkl锟侥硷拷锟斤拷取锟窖撅拷训锟斤拷锟矫碉拷权锟截ｏ拷锟斤拷锟揭凤拷锟斤拷锟街碉拷
 def init_network():
     with open("./pkl/sample_weight.pkl",'rb') as f:
         network = pickle.load(f)
         return network
     
 
-#三级的神经网络推理运算
+#锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 def predict(network,x):
     W1, W2, W3 = network['W1'],network['W2'],network['W3']
     b1, b2, b3 = network['b1'],network['b2'],network['b3']
@@ -41,7 +45,7 @@ def predict(network,x):
     z1 = sigmoid(a1)
     a2 = np.dot(z1,W2) + b2
     z2 = sigmoid(a2)
-    a3 = np.dot(z3,W3) + b3
+    a3 = np.dot(z2,W3) + b3
     y = sigmoid(a3)
 
     return y
