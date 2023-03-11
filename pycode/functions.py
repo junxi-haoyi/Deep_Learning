@@ -24,19 +24,19 @@ def softmax(a):
     y=exp_a/sum_exp_a
     return y
 
-#ï¿½ï¿½mnistï¿½Å±ï¿½ï¿½Ğ»ï¿½È¡ï¿½ï¿½ï¿½İ¼ï¿½
+#¶ÁÈ¡mnistÍ¼ÏñÊı¾İ¼¯
 def get_data():
     (x_train,t_train),(x_test,t_test) = load_mnist(normalize=True,flatten=True,one_hot_label=False)
     return x_test, t_test
 
-#ï¿½ï¿½pklï¿½Ä¼ï¿½ï¿½ï¿½È¡ï¿½Ñ¾ï¿½Ñµï¿½ï¿½ï¿½Ãµï¿½È¨ï¿½Ø£ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½ï¿½Öµï¿½
+#³õÊ¼»¯Éñ¾­ÍøÂç£¬´ÓpklÎÄ¼ş¶ÁÈ¡È¨ÖØ£¬ÒÔ×ÖµäµÄĞÎÊ½·µ»Ø
 def init_network():
     with open("./pkl/sample_weight.pkl",'rb') as f:
         network = pickle.load(f)
         return network
     
 
-#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#½øĞĞÉñ¾­ÍøÂçÍÆÀíÔËËã
 def predict(network,x):
     W1, W2, W3 = network['W1'],network['W2'],network['W3']
     b1, b2, b3 = network['b1'],network['b2'],network['b3']
