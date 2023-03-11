@@ -52,3 +52,16 @@ def predict(network,x):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
