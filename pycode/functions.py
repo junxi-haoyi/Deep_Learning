@@ -64,6 +64,11 @@ def cross_entropy_error(y,t):
     return -np.sum(t*np.log(y+delta))
 
 
+#mini-batch学习 选取批量计算损失误差
+
+
+
+
 
 
 

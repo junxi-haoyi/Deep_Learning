@@ -35,3 +35,5 @@ print(f"Accyracy of batch :{str(float(accuracy_batch/len(x)))}")
 
 
 
+
+
