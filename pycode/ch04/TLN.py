@@ -51,7 +51,10 @@ def numerical_gradient(f, x):
 
 
 
-        
+
+
+
+
 
         
 
