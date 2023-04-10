@@ -45,7 +45,11 @@ def numerical_gradient(f, x):
     it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])            
     while not it.finished:
         store_num = it[it.multi_index]
+        it[it.multi_index] = store_num + 1e-4
+        fxh1 = f(x) 
+
         
+
         
 
 
