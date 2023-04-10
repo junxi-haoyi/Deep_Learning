@@ -49,7 +49,7 @@ def numerical_gradient(f, x):
         fxh1 = f(x) 
 
 
-
+adasdas
 
 
 
