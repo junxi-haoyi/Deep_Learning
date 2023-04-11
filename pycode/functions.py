@@ -1,10 +1,10 @@
 #coding=UTF-8
 import os,sys
-sys.path.append("./DL/Deep_Learning")
+sys.path.append(".")
 import sys,os
 sys.path.append(".")
 import numpy as np
-from ch01.mnist import load_mnist
+from pycode.ch01.mnist import load_mnist
 #import pkl
 import pickle
 
